@@ -26,6 +26,8 @@ alias l='ls -CF'
 
 alias rf='rm -rf'
 
+alias swipl="rlwrap swipl"
+
 alias r='reset'
 alias c='clear'
 alias v='vim'
