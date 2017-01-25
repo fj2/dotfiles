@@ -2,6 +2,8 @@
 " Make line numbers magenta
 highlight LineNr term=bold cterm=NONE ctermfg=Magenta ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
+let mapleader=","
+
 " Setup
 set shell=/bin/bash
 set nocompatible              " be iMproved
@@ -13,7 +15,7 @@ set paste                     " makes pasting from clipboard good
 set showmatch                 " show matching brackets.
 
 " Setup search
-set hlsearch                  " highlight search results
+set nohlsearch                " don't highlight search results
 set incsearch                 " incremental search
 set ignorecase                " do case insensitive matching
 set smartcase                 " do smart case matching
@@ -25,6 +27,10 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set expandtab                 " insert tabs instead of spaces when tab is pressed
+
+" Setup ruler
+set ruler                     " shows column + line number at bottom
+
 
 imap jk <Esc>
 set clipboard=unnamed
@@ -38,12 +44,33 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+"Clang format
+"=================================================================
+let g:clang_format#command = '/usr/bin/clang-format'
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "AllowShortFunctionsOnASingleLine" : "false",
+            \ "AllowShortIfStatementsOnASingleLine" : "false",
+            \ "ColumnLimit" : 80,
+            \ "Standard" : "C++11"}
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" if you install vim-operator-user
+autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
+autocmd FileType c ClangFormatAutoEnable
+
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+Plugin 'rhysd/vim-clang-format'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
