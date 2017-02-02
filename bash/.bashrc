@@ -29,7 +29,7 @@ alias rf='rm -rf'
 alias swipl="rlwrap swipl"
 
 alias r='reset'
-alias c='clear'
+alias c="echo -en '\0033\0143'"
 alias v='vim'
 alias m='make'
 
@@ -194,6 +194,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+PINTOS=~/git/pintos_30/src/utils
+export PINTOS
 JAVA_HOME=/usr/lib/jvm/default-java
 export JAVA_HOME
 PATH=$PATH:$JAVA_HOME
