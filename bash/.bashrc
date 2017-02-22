@@ -2,9 +2,14 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# enable color support
-# add colours to ls and put directories first
-# add colours to grep, make it insensitive, add line numbers
+# Load aliases in from file
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
+
+# Enable color support
+# Add colours to ls and put directories first
+# Add colours to grep, make it insensitive, add line numbers
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto --group-directories-first'
@@ -167,6 +172,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -204,3 +210,5 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 SHELL=/bin/bash
 export SHELL
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

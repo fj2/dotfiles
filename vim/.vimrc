@@ -70,6 +70,8 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+Plugin 'junegunn/fzf'
+Plugin 'dikiaap/minimalist'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
@@ -91,3 +93,4 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+nnoremap <C-P> : FZF<CR>

@@ -191,7 +191,7 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <animation-charging> %{F#f0f} <label-charging>
 ;format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
