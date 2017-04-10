@@ -9,6 +9,9 @@ set shell=/bin/bash
 set nocompatible              " be iMproved
 filetype on
 syntax on                     
+
+set noswapfile                " stops swap files from being created
+
 set backspace=2               " backspace works over EOL etc
 set number                    " turn on line numbers
 set paste                     " makes pasting from clipboard good
