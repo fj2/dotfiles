@@ -22,6 +22,8 @@ exec --no-startup-id "xcompmgr -n & disown"
 exec_always --no-startup-id "killall -q polybar; polybar example & disown"
 # Set background
 exec_always "feh --bg-scale ~/pictures/wallpapers/stormtrooper.png"
+# Start unclutter (hide mouse cursor) 
+exec --no-startup-id "unclutter -root"
 # Start redshift 
 exec --no-startup-id "redshift -l 50:0 & disown"
 # Disable touchpad

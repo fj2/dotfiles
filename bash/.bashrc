@@ -44,7 +44,7 @@ alias q="exit"
 alias v="vim"
 alias r="reset"
 alias d="disown; exit"
-alias telegram="cd /; ./opt/telegram/Telegram & d"
+alias telegram="cd /; ./opt/Telegram/Telegram & d"
 alias gst="git status"
 alias gpll="git pull"
 alias gpsh="git push"
@@ -204,7 +204,9 @@ PINTOS=~/git/pintos_30/src/utils
 export PINTOS
 JAVA_HOME=/usr/lib/jvm/default-java
 export JAVA_HOME
-PATH=$PATH:$JAVA_HOME
+TELEGRAM=/opt/Telegram
+export TELEGRAM
+PATH=$PATH:$JAVA_HOME:$TELEGRAM
 export PATH
 export VISUAL=vim
 export EDITOR="$VISUAL"
