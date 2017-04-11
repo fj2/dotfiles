@@ -42,6 +42,7 @@ let NERDTreeQuitOnOpen=1
 
 
 " set the runtime path to include Vundle and initialize
+set rtp+=~/.fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
