@@ -8,11 +8,11 @@
 ;=====================================================
 
 [colors]
-background = #000
-background-alt = #444
+background = #2d2e3a
+background-alt = #404556
 foreground = #ffffff
 foreground-alt = #55
-primary = #ffb52a
+primary = #5d7ebf
 secondary = #e60053
 alert = #bd2c40
 
@@ -191,7 +191,7 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> %{F#f0f} <label-charging>
+format-charging = <animation-charging> %{F#5d7ebf} <label-charging>
 ;format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>

@@ -4,7 +4,7 @@ new_window none
 new_float none
 
 # Disable focus follows mouse
-# focus_follows_mouse no
+focus_follows_mouse no
 
 # Set up volume keys
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +10%"
@@ -21,13 +21,13 @@ exec --no-startup-id "xcompmgr -n & disown"
 # Start lemonbuddy
 exec_always --no-startup-id "killall -q polybar; polybar example & disown"
 # Set background
-exec_always "feh --bg-scale ~/pictures/wallpapers/stormtrooper.png"
+exec_always "feh --bg-scale ~/pictures/wallpapers/stormtrooper-grey.png"
 # Start unclutter (hide mouse cursor) 
-exec --no-startup-id "unclutter -root"
+exec --no-startup-id "unclutter -root -idle 3"
 # Start redshift 
 exec --no-startup-id "redshift -l 50:0 & disown"
 # Disable touchpad
-exec "xinput --disable 11"
+exec --no-statupd-id "xinput --disable 11"
 
 # <<---END CUSTOM CONFIG-->>
 
