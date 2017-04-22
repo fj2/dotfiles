@@ -15,6 +15,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# Clean up unused packages
+alias clean='sudo pacman -R `pacman -Qdtq`'
+
 # Additional cd aliases
 alias cd..='cd ..'
 alias cd...='cd ..; cd ..'
@@ -44,6 +47,12 @@ alias ga="git add"
 alias gc="git commit -m"
 
 alias telegram="Telegram"
+
+# Don't save history to file
+unset HISTFILE
+
+# Don't save less history to file
+export LESSHISTFILE='-'
 
 # Ctrl+s doesn't break vim
 stty -ixon -ixoff
