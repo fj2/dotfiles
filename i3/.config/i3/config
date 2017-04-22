@@ -11,7 +11,7 @@ bindsym XF86AudioLowerVolume exec "pactl set-sink-volume alsa_output.pci-0000_00
 bindsym XF86AudioMute exec "pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle" 
 
 # Set up locking the screen
-bindsym $mod+p exec "i3lock -c ff00ff"
+bindsym $mod+p exec "i3lock -u -i ~/pictures/wallpapers/arch.png"
 
 # Start wifi manager
 exec --no-startup-id "nm-applet & disown"
@@ -20,13 +20,13 @@ exec --no-startup-id "nm-applet & disown"
 # Start lemonbuddy
 exec_always --no-startup-id "killall -q polybar; polybar example & disown"
 # Set background
-exec_always "feh --bg-scale --no-fehbg ~/pictures/wallpapers/stormtrooper-grey.png"
+exec_always "feh --bg-scale --no-fehbg ~/pictures/wallpapers/arch.png"
 # Start unclutter (hide mouse cursor) 
 exec --no-startup-id "unclutter -root -idle 3"
 # Start redshift 
 exec --no-startup-id "redshift -l 50:0 & disown"
 # Disable touchpad
-exec --no-statupd-id "xinput --disable 11"
+exec --no-statupd-id "xinput disable 11"
 
 
 # i3 config file (v4)
