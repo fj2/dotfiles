@@ -48,7 +48,7 @@ alias gc="git commit -m"
 
 alias telegram="Telegram"
 
-# Don't save history to file
+# Don't save bash history to file
 unset HISTFILE
 
 # Don't save less history to file

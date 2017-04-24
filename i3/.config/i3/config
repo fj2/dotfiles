@@ -17,7 +17,7 @@ bindsym $mod+p exec "i3lock -u -i ~/pictures/wallpapers/arch.png"
 exec --no-startup-id "nm-applet & disown"
 # Start compositing manager (transparency)
 # exec --no-startup-id "xcompmgr -n & disown"
-# Start lemonbuddy
+# Start polybar
 exec_always --no-startup-id "killall -q polybar; polybar example & disown"
 # Set background
 exec_always "feh --bg-scale --no-fehbg ~/pictures/wallpapers/arch.png"
