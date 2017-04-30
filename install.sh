@@ -37,6 +37,17 @@ function print_progress {
   echo -en $progmsg
 }
 
+function check_stow {
+  if command -v stow >/dev/null 2>&1; then
+    echo "Happy memes, happy memes."
+  else
+    echo "Error: GNU Stow is not installed. Aborting."
+    exit
+  fi
+}
+
+check_stow
+
 for program in ${programs[@]} 
 do
   echo "Restoring $program"                   # write next line of input
@@ -49,7 +60,6 @@ do
   x=$((x + 1))                                # update loop counter)
   percent=$(((100 * x) / numprogs))           # update progress percentage
 done
-
 print_progress $percent
 
 echo -e ""
