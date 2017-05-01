@@ -39,7 +39,7 @@ function print_progress {
 
 function check_stow {
   if command -v stow >/dev/null 2>&1; then
-    echo "Happy memes, happy memes."
+    echo "Restoring config with GNU Stow."
   else
     echo "Error: GNU Stow is not installed. Aborting."
     exit
