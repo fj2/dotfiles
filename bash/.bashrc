@@ -4,16 +4,17 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Enable color support
-# Add colours to ls and put directories first
-# Add colours to grep, make it insensitive, add line numbers
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto --group-directories-first'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+# Add colours to ls and put directories first
+alias ls='ls --color=auto --group-directories-first'
+
+# Add colours to grep, make it insensitive, add line numbers
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Add colours to diff
+alias diff='diff --color=auto'
 
 # Clean up unused packages
 alias clean='sudo pacman -R `pacman -Qdtq`'
@@ -31,13 +32,10 @@ alias l='ls -CF'
 alias rf='rm -rf'
 alias r='reset'
 alias c="echo -en '\0033\0143'"
-alias v='vim'
-alias m='make'
 
 alias h="cd ~"
 alias q="exit"
 alias v="vim"
-alias r="reset"
 alias d="disown; exit"
 
 alias gst="git status"
