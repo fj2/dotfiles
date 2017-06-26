@@ -17,10 +17,6 @@ bindsym XF86MonBrightnessDown exec light -U 5
 # Set up locking the screen
 bindsym $mod+p exec "i3lock -u -i ~/pictures/wallpapers/arch.png"
 
-# Start network manager applet
-# exec --no-startup-id "nm-applet & disown"
-# Start compositing manager (transparency)
-# exec --no-startup-id "xcompmgr -n & disown"
 # Start polybar
 exec_always --no-startup-id "killall -q polybar; polybar example & disown"
 # Set background
@@ -28,10 +24,9 @@ exec_always "feh --bg-scale --no-fehbg ~/pictures/wallpapers/arch.png"
 # Start unclutter (hide mouse cursor) 
 exec --no-startup-id "unclutter -root -idle 3"
 # Start redshift 
-exec --no-startup-id "redshift -r -l 50:0 & disown"
+exec --no-startup-id "redshift -r -l 50:0 -t 6500:3400 & disown"
 # Disable touchpad
 exec --no-statupd-id "xinput disable 11"
-
 
 # i3 config file (v4)
 #
@@ -67,10 +62,10 @@ bindsym $mod+Shift+q kill
 bindsym $mod+c exec "firefox & disown"
 
 # take screenshot
-bindsym --release Print exec "maim -s /tmp/shot.png && xclip -selection c -t image/png /tmp/shot.png && rm -f /tmp/shot.png"
+bindsym --release Print exec "maim -u -s /tmp/shot.png && xclip -selection c -t image/png /tmp/shot.png && rm -f /tmp/shot.png"
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "rofi -show run -config ~/.config/rofi/config -hide-scrollbar -matching fuzzy"
+bindsym $mod+d exec "rofi -show run -config ~/.config/rofi/config -hide-scrollbar"
 
 # change focus
 bindsym $mod+j focus left
@@ -170,6 +165,6 @@ mode "$mode_display" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 # Declare here the shortcut to bring the display selection menu
 bindsym $mod+x mode "$mode_display"
-
