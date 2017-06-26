@@ -74,7 +74,7 @@ function cd()
 }
 
 # Set up bash prompt
-PS1='\[\e[0;34m\]\u@\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+PS1='\[\e[0;34m\]\u@$(~/elapsed.sh)\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
