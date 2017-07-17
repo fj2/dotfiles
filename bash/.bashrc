@@ -1,9 +1,10 @@
+# shellcheck disable=SC1090
 # Load aliases in from file
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi
 
-# Enable color support
+alias gitplz="git config --global credential.helper 'cache --timeout=3600'"
 
 # Add colours to ls and put directories first
 alias ls='ls --color=auto --group-directories-first'
@@ -17,12 +18,7 @@ alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 
 # Clean up unused packages
-alias clean='sudo pacman -R `pacman -Qdtq`'
-
-# Additional cd aliases
-alias cd..='cd ..'
-alias cd...='cd ..; cd ..'
-alias cd....='cd ..; cd ..; cd ..'
+alias clean='sudo pacman -R $(pacman -Qdtq)'
 
 # Additional ls aliases
 alias ll='ls -alF'
@@ -43,8 +39,6 @@ alias gpll="git pull"
 alias gpsh="git push"
 alias ga="git add"
 alias gc="git commit -m"
-
-alias telegram="Telegram"
 
 # Don't save bash history to file
 unset HISTFILE
@@ -74,21 +68,9 @@ function cd()
 }
 
 # Set up bash prompt
-PS1='\[\e[0;34m\]\u@$(~/elapsed.sh)\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+PS1='\[\e[0;34m\]\u@$(~/.elapsed.sh)\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
-TELEGRAM='/opt/Telegram'
-PATH=$PATH:$TELEGRAM
+PATH=$PATH:'/home/finn/voltdb-sgx/bin'
 export PATH
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -96,3 +78,5 @@ SHELL=/bin/bash
 export SHELL
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+PATH="/home/finn/perl5/bin${PATH:+:${PATH}}"; export PATH;

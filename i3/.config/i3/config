@@ -20,11 +20,11 @@ bindsym $mod+p exec "i3lock -u -i ~/pictures/wallpapers/arch.png"
 # Start polybar
 exec_always --no-startup-id "killall -q polybar; polybar example & disown"
 # Set background
-exec_always "feh --bg-scale --no-fehbg ~/pictures/wallpapers/arch.png"
+exec_always "feh --bg-center --no-fehbg ~/pictures/wallpapers/arch.png"
 # Start unclutter (hide mouse cursor) 
 exec --no-startup-id "unclutter -root -idle 3"
 # Start redshift 
-exec --no-startup-id "redshift -r -l 50:0 -t 6500:3400 & disown"
+exec_always --no-startup-id "killall -q redshift; redshift -r -l 50:0 -t 5000:3400 & disown"
 # Disable touchpad
 exec --no-statupd-id "xinput disable 11"
 
@@ -159,7 +159,7 @@ bindsym $mod+r mode "resize"
 set $mode_display Ext Screen (v) VGA ON, (x) VGA OFF
 mode "$mode_display" {
     bindsym v exec --no-startup-id xrandr --output VGA-1 --auto --right-of LVDS-1, mode "default"
-    bindsym x exec --no-startup-id xrandr --output VGA-2 --auto --off, mode "default"
+    bindsym x exec --no-startup-id xrandr --output VGA-1 --auto --off, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

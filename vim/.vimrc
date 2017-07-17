@@ -12,7 +12,6 @@ set noswapfile                " stops swap files from being created
 
 set backspace=2               " backspace works over EOL etc
 set number                    " turn on line numbers
-set paste                     " makes pasting from clipboard good
 set showmatch                 " show matching brackets.
 
 " Setup search
@@ -45,11 +44,12 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'ternjs/tern_for_vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+Plugin 'ternjs/tern_for_vim'
+Plugin 'universal-ctags/ctags'
 Plugin 'junegunn/fzf'
 Plugin 'w0rp/ale'
 Plugin 'scrooloose/nerdtree'
