@@ -14,7 +14,6 @@ fi
 for program in ${programs///}; do
   echo "Restoring files for ${program}"
   stow "${program}"
-  sleep 1
 done
 
 echo "Installing vundle"
