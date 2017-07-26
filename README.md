@@ -1,13 +1,15 @@
 # Dotfiles
 Personal dotfiles, managed with GNU Stow.
 
-Contained dotfiles:
+Contained configurations:
+* bash
+* cmus
 * i3
 * polybar
-* vim
 * rofi
-* bashrc
-* cmus
+* vim
+* wallpapers
+* xfce4-terminal
 
 Installation
 ------------
@@ -15,6 +17,5 @@ Installation
 cd ~
 git clone https://github.com/fj2/dotfiles.git
 cd dotfiles
-chmod +x install.sh
 ./install.sh
 ```

@@ -30,7 +30,7 @@ set expandtab                 " insert tabs instead of spaces when tab is presse
 " Setup ruler
 set ruler                     " shows column + line number at bottom
 
-map <C-n>:NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
 " set the runtime path to include Vundle and initialize
