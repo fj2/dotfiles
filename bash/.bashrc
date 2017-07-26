@@ -1,20 +1,11 @@
-# shellcheck disable=SC1090
-# Load aliases in from file
-if [ -f ~/.bash_aliases ]; then
-. ~/.bash_aliases
-fi
-
+# Remember git credentials
 alias gitplz="git config --global credential.helper 'cache --timeout=3600'"
 
 # Add colours to ls and put directories first
 alias ls='ls --color=auto --group-directories-first'
 
-# Add colours to grep, make it insensitive, add line numbers
+# Add colours to grep and diff
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-# Add colours to diff
 alias diff='diff --color=auto'
 
 # Clean up unused packages
@@ -25,7 +16,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias rf='rm -rf'
 alias r='reset'
 alias c="echo -en '\0033\0143'"
 
@@ -50,7 +40,7 @@ export LESSHISTFILE='-'
 stty -ixon -ixoff
 
 # Coloured GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;34:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;34:caret=01;32:locus=01:quote=01'
 
 # Colour man pages nicely
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -67,16 +57,10 @@ function cd()
    builtin cd "$*" && ls
 }
 
-# Set up bash prompt
+# Configure bash prompt
 PS1='\[\e[0;34m\]\u@$(~/.elapsed.sh)\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 
-PATH=$PATH:'/home/finn/voltdb-sgx/bin'
-export PATH
-export VISUAL=vim
+export PATH=$PATH:'/home/finn/voltdb-sgx/bin'
+export VISUAL='vim'
 export EDITOR="$VISUAL"
-SHELL=/bin/bash
-export SHELL
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-PATH="/home/finn/perl5/bin${PATH:+:${PATH}}"; export PATH;
+export SHELL='/bin/bash'
