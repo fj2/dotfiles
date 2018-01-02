@@ -58,7 +58,7 @@ function cd()
 }
 
 # Configure bash prompt
-PS1='\[\e[0;34m\]\u@$(~/.elapsed.sh)\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+PS1='\[\e[0;34m\]\u@\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 
 export PATH=$PATH:'/home/finn/voltdb-sgx/bin'
 export VISUAL='vim'

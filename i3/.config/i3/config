@@ -1,3 +1,9 @@
+# Set gaps
+gaps inner 20
+gaps outer 0
+smart_gaps on
+smart_borders on
+
 # Remove window borders
 new_window none
 new_float none
@@ -15,18 +21,20 @@ bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
 # Set up locking the screen
-bindsym $mod+p exec "i3lock -u -i ~/pictures/wallpapers/arch.png"
+bindsym $mod+p exec "i3lock -u -i ~/pictures/wallpapers/jonatan-pie-367745.png"
 
 # Start polybar
 exec_always --no-startup-id "killall -q polybar; polybar example & disown"
 # Set background
-exec_always "feh --bg-center --no-fehbg ~/pictures/wallpapers/arch.png"
+exec_always "feh --bg-fill --no-fehbg ~/pictures/wallpapers/jonatan-pie-367745.jpg"
 # Start unclutter (hide mouse cursor) 
 exec --no-startup-id "unclutter -root -idle 3"
+# Start mpd 
+exec --no-startup-id "mpd"
+# Start compton
+exec --no-startup-id "compton -b"
 # Start redshift 
 exec_always --no-startup-id "killall -q redshift; redshift -r -l 50:0 -t 5000:3400 & disown"
-# Disable touchpad
-exec --no-statupd-id "xinput disable 11"
 
 # i3 config file (v4)
 #
@@ -49,7 +57,7 @@ bindsym $mod+c exec "firefox & disown"
 # take screenshot
 bindsym --release Print exec "maim -u -s /tmp/shot.png && xclip -selection c -t image/png /tmp/shot.png && rm -f /tmp/shot.png"
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+d exec "rofi -show run -config ~/.config/rofi/config -hide-scrollbar"
 
 # change focus
