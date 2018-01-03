@@ -1,45 +1,81 @@
 #!/bin/bash
 
-# list all directories, limit results to 1 per line
-programs=$(ls -d1 -- */)
+# FUNCTION DELCARATIONS
+# =====================
 
-if command -v stow >/dev/null 2>&1; then
-  echo "Restoring config with GNU Stow."
-else
-  echo "Error: GNU Stow is not installed. Aborting."
-  exit
-fi
+function arch_package_install_helper() {
+  yaourt -Syu;
+  yaourt -S $(cat packages/arch packages/arch_aur);
+  echo
+  echo "Installing vundle"
+  echo
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  vim +PluginInstall +qall
+}
 
-echo
+function arch_package_install() {
+  while true; do
+      read -p "Do you wish to install recommended packages? [y/n] " yn
+      case $yn in
+        [Yy]* ) arch_package_install_helper; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+      esac
+  done
+  echo
+}
 
-# Remove the trailing '/'s from directories
-for program in ${programs///}; do
-  echo "Restoring files for ${program}"
-  stow "${program}"
-done
+function yaourt_install_helper() {
+  sudo tee -a /etc/pacman.conf << EOF
 
-echo
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/\$arch
+EOF
+  sudo pacman -Sy yaourt
+  arch_package_install
+}
 
-echo "Installing vundle"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+# Ask user if they wish to install yaourt
+function yaourt_install() {
+  while true; do
+      read -p "Do you wish to install yaourt? [y/n] " yn
+      case $yn in
+        [Yy]* ) yaourt_install_helper break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+      esac
+  done
+  echo
+}
 
-echo
+function config_install() {
+  # Check if stow is installed
+  if command -v stow >/dev/null 2>&1; then
+    echo "Restoring config with GNU Stow."
+  else
+    echo "Error: GNU Stow is not installed. Aborting."
+    exit
+  fi
+  echo
 
-echo "You may wish to install:"
-echo " - feh"
-echo " - i3"
-echo " - i3lock"
-echo " - light"
-echo " - maim"
-echo " - polybar"
-echo " - pulseaudio"
-echo " - redshift"
-echo " - rofi"
-echo " - unclutter"
-echo " - xclip"
-echo " - xfce4-terminal"
+  # list all directories, limit results to 1 per line
+  programs=$(ls -d1 -- */)
 
-echo
+  for program in ${programs///}; do # Remove the trailing '/'s from directories
+    if [ "${program}" != "packages" ]; then
+      echo "Restoring files for ${program}"
+      stow "${program}"
+    fi
+  done
+  echo
+}
+
+# END FUNCTION DECLARATIONS
+# =========================
+
+config_install
+
+yaourt_install
 
 echo "Setup complete"
