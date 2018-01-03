@@ -51,6 +51,25 @@ export LESS_TERMCAP_so=$'\E[37;44m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;35m'
 
+# Block a website by adding entries for it in the hosts file
+function block() {
+  blockh $* | sudo tee -a /etc/hosts > /dev/null
+}
+
+# Helper
+function blockh() {
+  fst="0.0.0.0"
+  snd="::0"
+  for i in "$@"
+  do
+    echo ""
+    echo "$fst www.$i"
+    echo "$fst $i"
+    echo "$snd www.$i"
+    echo "$snd $i"
+  done
+}
+
 # List contents after call to cd
 function cd()
 {
@@ -60,7 +79,6 @@ function cd()
 # Configure bash prompt
 PS1='\[\e[0;34m\]\u@\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 
-export PATH=$PATH:'/home/finn/voltdb-sgx/bin'
 export VISUAL='vim'
 export EDITOR="$VISUAL"
 export SHELL='/bin/bash'
