@@ -21,12 +21,12 @@ bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
 # Set up locking the screen
-bindsym $mod+p exec "i3lock -u -i ~/pictures/wallpapers/jonatan-pie-367745.png"
+bindsym $mod+p exec "i3lock -u -i ~/pictures/wallpapers/durdle-door.png"
 
 # Start polybar
 exec_always --no-startup-id "killall -q polybar; polybar example & disown"
 # Set background
-exec_always "feh --bg-fill --no-fehbg ~/pictures/wallpapers/jonatan-pie-367745.jpg"
+exec_always "feh --bg-fill --no-fehbg ~/pictures/wallpapers/tarr-steps.jpg"
 # Start unclutter (hide mouse cursor) 
 exec --no-startup-id "unclutter -root -idle 3"
 # Start mpd 
@@ -34,7 +34,7 @@ exec --no-startup-id "mpd"
 # Start compton
 exec --no-startup-id "compton -b"
 # Start redshift 
-exec_always --no-startup-id "killall -q redshift; redshift -r -l 50:0 -t 5000:3400 & disown"
+exec_always --no-startup-id "killall -q redshift; redshift -r -l 50:0 -t 5000:2700 & disown"
 
 # i3 config file (v4)
 #
@@ -51,8 +51,8 @@ bindsym $mod+Return exec "i3-sensible-terminal"
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# launch firefox
-bindsym $mod+c exec "firefox & disown"
+# launch waterfox
+bindsym $mod+c exec "waterfox & disown"
 
 # take screenshot
 bindsym --release Print exec "maim -u -s /tmp/shot.png && xclip -selection c -t image/png /tmp/shot.png && rm -f /tmp/shot.png"

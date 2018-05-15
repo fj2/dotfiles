@@ -5,7 +5,6 @@ highlight LineNr term=bold cterm=NONE ctermfg=Magenta ctermbg=NONE gui=NONE guif
 set shell=/bin/bash
 set nocompatible              " be iMproved
 filetype on
-syntax on                     
 
 set noswapfile                " stops swap files from being created
 
@@ -21,8 +20,8 @@ set smartcase                 " do smart case matching
 set wrapscan                  " continue searching at top when hitting bottom
 
 " Setup tabs
-set tabstop=2                 " tabs count as 2 spaces
-set shiftwidth=2   
+set tabstop=4                 " tabs count as 4 spaces
+set shiftwidth=4
 set autoindent
 set smartindent
 set expandtab                 " insert tabs instead of spaces when tab is pressed
@@ -30,22 +29,17 @@ set expandtab                 " insert tabs instead of spaces when tab is presse
 " Setup ruler
 set ruler                     " shows column + line number at bottom
 
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
-
-" set the runtime path to include Vundle and initialize
+" set the runtime path to include fzf, Vundle
+set rtp+=/usr/bin/fzf
 set rtp+=~/.vim/bundle/Vundle.vim
+
+" Vundle
 call vundle#begin()
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'ternjs/tern_for_vim'
 Plugin 'universal-ctags/ctags'
 Plugin 'w0rp/ale'
-Plugin 'scrooloose/nerdtree'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" Put your non-Plugin stuff after this line
+Plugin 'elixir-editors/vim-elixir'
+call vundle#end()
+filetype plugin indent on
+syntax enable

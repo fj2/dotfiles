@@ -23,12 +23,19 @@ alias h="cd ~"
 alias q="exit"
 alias v="vim"
 alias d="disown; exit"
+alias o="xdg-open"
 
 alias gst="git status"
 alias gpll="git pull"
 alias gpsh="git push"
 alias ga="git add"
 alias gc="git commit -m"
+
+alias play="mpc searchplay title"
+alias by="mpc list title artist"
+
+# Enable autojump
+source /etc/profile.d/autojump.sh
 
 # Don't save bash history to file
 unset HISTFILE
@@ -82,3 +89,5 @@ PS1='\[\e[0;34m\]\u@\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 export VISUAL='vim'
 export EDITOR="$VISUAL"
 export SHELL='/bin/bash'
+export PATH="`ruby -e 'puts Gem.user_dir'`/bin:/usr/local:$PATH"
+export FONTCONFIG_FILE=

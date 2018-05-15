@@ -27,7 +27,12 @@ ColorForeground=#dcdcdc
 ColorBackground=#000000000000
 ColorCursor=#dcdcdc
 ColorPalette=#3f3f3f;#705050;#60b48a;#dfaf8f;#9ab8d7;#dc8cc3;#8cd0d3;#dcdcdc;#709080;#dca3a3;#72d5a3;#f0dfaf;#94bff3;#ec93d3;#93e0e3;#ffffff
-FontName=Noto Sans Mono 12
-ScrollingBar=TERMINAL_SCROLLBAR_NONE
+FontName=Noto Sans Mono Medium 12
+ScrollingUnlimited=TRUE
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
+ScrollingOnOutput=FALSE
+MiscNewTabAdjacent=FALSE
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ShortcutsNoHelpkey=TRUE
+MiscShowRelaunchDialog=TRUE
 
