@@ -1,6 +1,10 @@
 # Remember git credentials
 alias gitplz="git config --global credential.helper 'cache --timeout=3600'"
 
+function profile {
+    CPUPROFILE="$1".pprof LD_PRELOAD=/usr/lib/libprofiler.so $*
+}
+
 # Add colours to ls and put directories first
 alias ls='ls --color=auto --group-directories-first'
 
@@ -15,6 +19,8 @@ alias clean='sudo pacman -R $(pacman -Qdtq)'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias m='mpc'
 
 alias r='reset'
 alias c="echo -en '\0033\0143'"
@@ -36,9 +42,6 @@ alias by="mpc list title artist"
 
 # Enable autojump
 source /etc/profile.d/autojump.sh
-
-# Don't save bash history to file
-unset HISTFILE
 
 # Don't save less history to file
 export LESSHISTFILE='-'
@@ -89,5 +92,4 @@ PS1='\[\e[0;34m\]\u@\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 export VISUAL='vim'
 export EDITOR="$VISUAL"
 export SHELL='/bin/bash'
-export PATH="`ruby -e 'puts Gem.user_dir'`/bin:/usr/local:$PATH"
-export FONTCONFIG_FILE=
+export PATH="`ruby -e 'puts Gem.user_dir'`/bin:/usr/local:~/.cabal/bin:$PATH"

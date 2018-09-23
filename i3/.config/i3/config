@@ -51,8 +51,8 @@ bindsym $mod+Return exec "i3-sensible-terminal"
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# launch waterfox
-bindsym $mod+c exec "waterfox & disown"
+# launch firefox
+bindsym $mod+c exec "firefox & disown"
 
 # take screenshot
 bindsym --release Print exec "maim -u -s /tmp/shot.png && xclip -selection c -t image/png /tmp/shot.png && rm -f /tmp/shot.png"

@@ -33,6 +33,8 @@ set ruler                     " shows column + line number at bottom
 set rtp+=/usr/bin/fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 
+nmap<leader>a :FZF<CR>
+
 " Vundle
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
