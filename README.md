@@ -3,7 +3,6 @@ Personal dotfiles, managed with GNU Stow.
 
 Contained configurations:
 * bash
-* cmus
 * i3
 * polybar
 * rofi
