@@ -21,12 +21,12 @@ bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
 # Set up locking the screen
-bindsym $mod+p exec "i3lock -u -i ~/pictures/wallpapers/durdle-door.png"
+bindsym $mod+p exec "i3lock -u -i ~/Pictures/wallpapers/durdle-door.png"
 
 # Start polybar
 exec_always --no-startup-id "killall -q polybar; polybar example & disown"
 # Set background
-exec_always "feh --bg-fill --no-fehbg ~/pictures/wallpapers/tarr-steps.jpg"
+exec_always "feh --bg-fill --no-fehbg ~/Pictures/wallpapers/tarr-steps.jpg"
 # Start unclutter (hide mouse cursor) 
 exec --no-startup-id "unclutter -root -idle 3"
 # Start mpd 
@@ -153,8 +153,8 @@ bindsym $mod+r mode "resize"
 # Set the shortcuts and what they do
 set $mode_display Ext Screen (v) VGA ON, (x) VGA OFF
 mode "$mode_display" {
-    bindsym v exec --no-startup-id xrandr --output VGA-1 --auto --right-of LVDS-1, mode "default"
-    bindsym x exec --no-startup-id xrandr --output VGA-1 --auto --off, mode "default"
+    bindsym v exec --no-startup-id xrandr --output DP-2 --auto --right-of eDP-1, mode "default"
+    bindsym x exec --no-startup-id xrandr --output DP-2 --auto --off, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

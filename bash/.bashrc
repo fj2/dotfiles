@@ -93,3 +93,4 @@ export VISUAL='vim'
 export EDITOR="$VISUAL"
 export SHELL='/bin/bash'
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:/usr/local:~/.cabal/bin:$PATH"
+. ~/.cargo/env
