@@ -11,6 +11,7 @@ alias ls='ls --color=auto --group-directories-first'
 # Add colours to grep and diff
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
+alias j='autojump'
 
 # Clean up unused packages
 alias clean='sudo pacman -R $(pacman -Qdtq)'
@@ -39,9 +40,6 @@ alias gc="git commit -m"
 
 alias play="mpc searchplay title"
 alias by="mpc list title artist"
-
-# Enable autojump
-source /etc/profile.d/autojump.sh
 
 # Don't save less history to file
 export LESSHISTFILE='-'
@@ -92,5 +90,4 @@ PS1='\[\e[0;34m\]\u@\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 export VISUAL='vim'
 export EDITOR="$VISUAL"
 export SHELL='/bin/bash'
-export PATH="`ruby -e 'puts Gem.user_dir'`/bin:/usr/local:~/.cabal/bin:$PATH"
 . ~/.cargo/env
