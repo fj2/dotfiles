@@ -7,7 +7,6 @@ Contained configurations:
 * polybar
 * rofi
 * vim
-* wallpapers
 * xfce4-terminal
 
 Installation

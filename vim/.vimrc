@@ -4,8 +4,6 @@ highlight LineNr term=bold cterm=NONE ctermfg=Magenta ctermbg=NONE gui=NONE guif
 " Setup
 set shell=/bin/bash
 set nocompatible              " be iMproved
-filetype on
-
 set noswapfile                " stops swap files from being created
 
 set backspace=2               " backspace works over EOL etc
@@ -16,8 +14,6 @@ set showmatch                 " show matching brackets.
 set nohlsearch                " don't highlight search results
 set incsearch                 " incremental search
 set ignorecase                " do case insensitive matching
-set smartcase                 " do smart case matching
-set wrapscan                  " continue searching at top when hitting bottom
 
 " Setup tabs
 set tabstop=4                 " tabs count as 4 spaces
@@ -43,5 +39,6 @@ Plugin 'universal-ctags/ctags'
 Plugin 'w0rp/ale'
 Plugin 'elixir-editors/vim-elixir'
 call vundle#end()
+
 filetype plugin indent on
 syntax enable
