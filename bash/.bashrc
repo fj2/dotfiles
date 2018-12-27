@@ -38,7 +38,7 @@ alias diff='diff --color=auto'
 # Clean up unused packages
 alias clean='sudo pacman -R $(pacman -Qdtq)'
 
-alias j='autojump'
+#alias j='autojump'
 alias m='mpc'
 
 alias r='reset'
@@ -59,7 +59,7 @@ alias play="mpc searchplay title"
 alias by="mpc list title artist"
 
 function profile {
-    CPUPROFILE="$1".pprof LD_PRELOAD=/usr/lib/libprofiler.so $*
+  CPUPROFILE="$1".pprof LD_PRELOAD=/usr/lib/libprofiler.so $*
 }
 
 # Block a website by adding entries for it in the hosts file
@@ -87,4 +87,5 @@ function cd()
    builtin cd "$*" && ls
 }
 
+source /etc/profile.d/autojump.bash
 source ~/.cargo/env

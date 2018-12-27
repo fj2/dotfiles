@@ -29,15 +29,13 @@ set ruler                     " shows column + line number at bottom
 set rtp+=/usr/bin/fzf
 set rtp+=~/.vim/bundle/Vundle.vim
 
-nmap<leader>a :FZF<CR>
+nmap<leader>f :FZF<CR>
 
 " Vundle
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'ternjs/tern_for_vim'
-Plugin 'universal-ctags/ctags'
 Plugin 'w0rp/ale'
-Plugin 'elixir-editors/vim-elixir'
+Plugin 'universal-ctags/ctags'
 call vundle#end()
 
 filetype plugin indent on
